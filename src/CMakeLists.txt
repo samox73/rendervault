@@ -24,7 +24,7 @@ add_executable(${BINARY} main.cpp)
 set_target_properties(${BINARY} PROPERTIES LINKER_LANGUAGE CXX)
 target_link_libraries(${BINARY} PUBLIC
         Vulkan::Vulkan
-        rendervault::rendervault
+        rendervault::rendervault-core
         rendervault::rendervault-utils
         glfw
         ${X11_LIBRARIES}

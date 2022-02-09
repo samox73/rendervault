@@ -9,6 +9,7 @@ void glfw_wrapper::init(size_t width, size_t height) {
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
     window_ = glfwCreateWindow(static_cast<int>(width), static_cast<int>(height), "Vulkan", nullptr, nullptr);
+    glfw_extensions_ = glfwGetRequiredInstanceExtensions(&glfw_extension_count_);
 }
 
 void glfw_wrapper::destroy() {
@@ -16,6 +17,4 @@ void glfw_wrapper::destroy() {
     glfwTerminate();
 }
 
-bool glfw_wrapper::should_close() {
-    return glfwWindowShouldClose(window_);
-}
+bool glfw_wrapper::should_close() { return glfwWindowShouldClose(window_); }

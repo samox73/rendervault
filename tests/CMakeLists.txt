@@ -8,7 +8,7 @@ add_executable(${BINARY} ${TEST_SOURCES})
 
 target_link_libraries(${BINARY} ${LINK_LIBS})
 target_link_libraries(${BINARY} PUBLIC
-        rendervault::rendervault
+        rendervault::rendervault-core
         rendervault::rendervault-utils
         glfw
         ${X11_LIBRARIES}
