@@ -12,7 +12,7 @@ project(${libname}
 #########################
 add_library(${libname})
 add_library(rendervault::${libname} ALIAS ${libname})
-target_sources(${libname} PRIVATE logger.cpp)
+target_sources(${libname} PRIVATE Logger.cpp)
 target_include_directories(${libname} PUBLIC
         ../../include
 )

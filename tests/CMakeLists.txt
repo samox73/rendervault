@@ -1,5 +1,5 @@
 set(BINARY ${CMAKE_PROJECT_NAME}_test)
-set(TEST_SOURCES main.cpp ../src/core/glfw_wrapper.cpp ../include/rendervault/core/glfw_wrapper.hpp)
+set(TEST_SOURCES main.cpp)
 
 enable_testing()
 find_package(GTest REQUIRED)

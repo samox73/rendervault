@@ -6,14 +6,15 @@
 #define VULKAN_ENGINE_GLFW_WRAPPER_HPP
 
 #include <GLFW/glfw3.h>
+#include <vector>
 
-class glfw_wrapper {
+class GlfwWrapper {
     GLFWwindow* window_;
     uint32_t glfw_extension_count_{};
     const char** glfw_extensions_;
 
    public:
-    glfw_wrapper() = default;
+    GlfwWrapper() = default;
 
     void init(size_t width, size_t height);
 
@@ -21,9 +22,13 @@ class glfw_wrapper {
 
     bool should_close();
 
-    uint32_t get_glfw_extension_count() const { return glfw_extension_count_; }
+    uint32_t getGlfwExtensionCount() const { return glfw_extension_count_; }
 
-    const char** get_glfw_extensions() const { return glfw_extensions_; }
+    const char** getGlfwExtensions() const { return glfw_extensions_; }
+
+    std::vector<const char*> getGlfwExtensionsVector() const {
+        return std::vector<const char*>(glfw_extensions_, glfw_extensions_ + glfw_extension_count_);
+    }
 };
 
 #endif  // VULKAN_ENGINE_GLFW_WRAPPER_HPP

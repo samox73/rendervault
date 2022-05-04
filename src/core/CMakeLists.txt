@@ -1,8 +1,8 @@
 #########################
 # Preamble
 #########################
-cmake_minimum_required(VERSION 3.21)
 set(libname rendervault-core)
+cmake_minimum_required(VERSION 3.21)
 project(${libname}
         VERSION 0.1.0
         LANGUAGES CXX)
@@ -13,9 +13,9 @@ project(${libname}
 add_library(${libname})
 add_library(rendervault::${libname} ALIAS ${libname})
 target_sources(${libname} PRIVATE
-        initializers.cpp
-        glfw_wrapper.cpp
-        render_engine.cpp
+        Initializer.cpp
+        GlfwWrapper.cpp
+        RenderCore.cpp
         )
 target_include_directories(${libname} PUBLIC
         ../../include

@@ -6,11 +6,11 @@
 //#define GLFW_EXPOSE_NATIVE_X11
 #include <GLFW/glfw3native.h>
 
-#include <rendervault/utils/logger.hpp>
+#include <rendervault/utils/Logger.hpp>
 
-#include "glfw_wrapper.hpp"
+#include "GlfwWrapper.hpp"
 
-struct render_engine {
+struct RenderCore {
     // Vulkan objects
     vk::UniqueInstance instance_;
     vk::SurfaceKHR surface_;
@@ -18,11 +18,11 @@ struct render_engine {
     vk::PhysicalDevice gpu_;
 
     // core-internal objects
-    logger log{"render_engine"};
+    Logger log{"render_engine"};
     bool initialized_{};
     size_t frame_number_{};
     vk::Extent2D window_extent_{1700, 900};
-    glfw_wrapper window_;
+    GlfwWrapper window_;
 
     // initializes everything in the engine
     void init();

@@ -1,8 +1,8 @@
-#include <rendervault/core/render_engine.hpp>
-#include <rendervault/utils/logger.hpp>
+#include <rendervault/core/RenderCore.hpp>
+#include <rendervault/utils/Logger.hpp>
 
 int main() {
-    render_engine engine{};
+    RenderCore engine{};
     engine.init();
     engine.run();
     engine.cleanup();

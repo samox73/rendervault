@@ -1,10 +1,6 @@
-//
-// Created by samox on 2/9/22.
-//
+#include <rendervault/core/GlfwWrapper.hpp>
 
-#include "../../include/rendervault/core/glfw_wrapper.hpp"
-
-void glfw_wrapper::init(size_t width, size_t height) {
+void GlfwWrapper::init(size_t width, size_t height) {
     glfwInit();
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
@@ -12,9 +8,9 @@ void glfw_wrapper::init(size_t width, size_t height) {
     glfw_extensions_ = glfwGetRequiredInstanceExtensions(&glfw_extension_count_);
 }
 
-void glfw_wrapper::destroy() {
+void GlfwWrapper::destroy() {
     glfwDestroyWindow(window_);
     glfwTerminate();
 }
 
-bool glfw_wrapper::should_close() { return glfwWindowShouldClose(window_); }
+bool GlfwWrapper::should_close() { return glfwWindowShouldClose(window_); }
